@@ -33,7 +33,7 @@ function PageShell({ pageContext, children }) {
               <Link href="/social" className="text button">
                 Social
               </Link>
-              <ThemeSwitcher />
+              {/* <ThemeSwitcher /> */}
             </Sidebar>
             <Content>{children}</Content>
           </Layout>

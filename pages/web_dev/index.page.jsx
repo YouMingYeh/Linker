@@ -1,8 +1,8 @@
 import React from 'react'
 import './style.css'
 import logo from './dev.png'
-import { AiOutlineBgColors } from "react-icons/ai";
-import { SiVite, SiMui, SiTailwindcss } from "react-icons/si"
+import { AiOutlineBgColors } from "react-icons/ai/index.js";
+import { SiVite, SiMui, SiTailwindcss } from "react-icons/si/index.js"
 
 const buttons = [
   {
@@ -84,3 +84,5 @@ function Button({ name, url, icon }) {
     </button>
   );
 }
+
+

@@ -6,4 +6,7 @@ export default {
     react(),
     ssr()
   ],
+  resolve: {
+    extensions: ['.js', '.ts', '.jsx', '.tsx']
+  }
 };

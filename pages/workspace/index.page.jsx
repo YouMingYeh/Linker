@@ -1,9 +1,9 @@
 import React from 'react'
 import './style.css'
 import logo from './work.jpeg'
-import { AiFillGithub, AiFillYoutube } from "react-icons/ai";
-import { BsDiscord } from "react-icons/bs";
-import { SiOpenai } from "react-icons/si"
+import { AiFillGithub, AiFillYoutube } from "react-icons/ai/index.js";
+import { BsDiscord } from "react-icons/bs/index.js";
+import { SiOpenai } from "react-icons/si/index.js"
 const buttons = [
   {
     name: 'GitHub',

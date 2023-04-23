@@ -1,7 +1,7 @@
 {
   "scripts": {
 
-    "prod": "npm run build && npm run server:prod",
+    "prod": "npm run vercel-build && npm run server:prod",
 
     "server": "node ./server",
     "server:prod": "cross-env NODE_ENV=production node ./server",

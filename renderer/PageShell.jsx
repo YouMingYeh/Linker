@@ -4,6 +4,7 @@ import { PageContextProvider } from "./usePageContext";
 import { Link } from "./Link";
 import Box from "./Box";
 import ThemeSwitcher from "./ThemeSwitcher";
+import YouTube from 'react-youtube';
 
 export { PageShell };
 
@@ -82,6 +83,10 @@ function PageShell({ pageContext, children }) {
                   Social
                 </Link>
                 <ThemeSwitcher isLoading={isLoading} setIsLoading={setIsLoading}/>
+              <YouTube videoId="Q_C4fhnrMRk" opts={{
+                height: 200,
+                width: 300
+              }}/>
               </Sidebar>
               <Content>{children}</Content>
             </Layout>

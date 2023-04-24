@@ -2,12 +2,12 @@ import React from 'react'
 import './style.css'
 import logo from './work.jpeg'
 import { AiFillGithub, AiFillYoutube } from "react-icons/ai/index.js";
-import { BsDiscord } from "react-icons/bs/index.js";
+import { BsDiscord, BsMedium } from "react-icons/bs/index.js";
 import { SiOpenai } from "react-icons/si/index.js"
 const buttons = [
   {
     name: 'GitHub',
-    url: 'https://cool.ntu.edu.tw/',
+    url: 'https://github.com/',
     icon: <AiFillGithub />
   },
   {
@@ -23,6 +23,10 @@ const buttons = [
     name: 'Youtube',
     url: 'https://www.youtube.com/',
     icon: <AiFillYoutube />
+  },{
+    name: 'Medium',
+    url: 'https://medium.com/',
+    icon: <BsMedium />
   }
 ]
 

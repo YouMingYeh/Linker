@@ -63,7 +63,7 @@ function Logo() {
         <img
           src={logo}
           className="h-52 w-52 
-        outline-4 outline-dotted outline-slate-800 dark:outline-slate-100 rounded-full outline-offset-4 mb-16"
+        outline-4 outline-dotted outline-slate-800 dark:outline-slate-100 rounded-full outline-offset-4 mb-16 object-cover"
           alt="logo"
         />
       </a>

@@ -15,7 +15,7 @@
         @apply text-slate-800 dark:text-slate-100 font-semibold text-lg
     }
     .background {
-        @apply bg-slate-100 dark:bg-slate-600
+        @apply bg-slate-100 dark:bg-slate-600 
     }
     .button {
         @apply text bg-slate-400 dark:bg-slate-500 border-2 border-slate-800 shadow-slate-800 transition-all rounded-lg px-5 py-2 m-2 shadow-[3px_3px_0_0px] 

@@ -1,5 +1,3 @@
-// Note that this file isn't processed by Vite, see https://github.com/brillout/vite-plugin-ssr/issues/562
-
 const express = require('express')
 const compression = require('compression')
 const { renderPage } = require('vite-plugin-ssr/server')
@@ -32,6 +30,19 @@ async function startServer() {
     const pageContextInit = {
       urlOriginal: req.originalUrl
     }
+    const loadingHtml = `
+      <html>
+        <head>
+          <title>Loading...</title>
+        </head>
+        <body>
+          <h1>Loading...</h1>
+        </body>
+      </html>
+    `
+    res.write(loadingHtml)
+    res.flush()
+
     const pageContext = await renderPage(pageContextInit)
     const { httpResponse } = pageContext
     if (!httpResponse) return next()

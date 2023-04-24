@@ -1,50 +1,59 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from "react";
+import "./style.css";
 
+const ThemeSwitcher = ({isLoading, setIsLoading}) => {
+  const [theme, setTheme] = useState();
 
-
-import "./style.css"
-const ThemeSwitcher = () => {
-    const [theme, setTheme] = useState();
-    useEffect(()=>{
-        const localTheme = localStorage.getItem('theme')
-        if(localTheme){
-            setTheme(localTheme);
-        }
-        else if(window.matchMedia("prefer-color-scheme: dark").matches) {
-            
-            localStorage.setItem("theme", "dark");
-            setTheme('dark');
-        } else {
-            localStorage.setItem("theme", "light");
-            setTheme('light');
-        }
-    }, [])
-    useEffect(()=>{
-        if(!theme) return;
-        
-        if(theme == 'dark') {
-            document.documentElement.classList.add('dark')
-            localStorage.setItem("theme", "dark");
-        } else {
-            document.documentElement.classList.remove('dark')
-            localStorage.setItem("theme", "light");
-        }
-    },[theme]);
-
-    const handleSwitch = () => {
-        if(theme == 'dark') {
-            setTheme('light');
-        } else {
-            setTheme('dark');
-        }
+  useEffect(() => {
+    const localTheme = localStorage.getItem("theme");
+    if (localTheme) {
+      setTheme(localTheme);
+      setIsLoading(false);
+    } else if (window.matchMedia("prefer-color-scheme: dark").matches) {
+      localStorage.setItem("theme", "dark");
+      setTheme("dark");
+      setIsLoading(false);
+    } else {
+      localStorage.setItem("theme", "light");
+      setTheme("light");
+      setIsLoading(false);
     }
+  }, []);
 
-    return (
-        <button  onClick={handleSwitch} className='button rounded-full'>
-        {theme === 'dark' ? <DarkModeIcon /> : <LightModeIcon />}
-      </button>
-    )
-}
+  useEffect(() => {
+    if (!theme) return;
+
+    if (theme == "dark") {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [theme]);
+
+  
+
+  const handleSwitch = () => {
+    if (theme == "dark") {
+      setTheme("light");
+    } else {
+      setTheme("dark");
+    }
+  };
+
+  return (
+    <button onClick={handleSwitch} className="button rounded-full">
+      {theme === "dark" ? (
+        <DarkModeIcon />
+      ) : (
+        <LightModeIcon />
+      )}
+    </button>
+  );
+};
+
+
 
 function LightModeIcon () {
     return (

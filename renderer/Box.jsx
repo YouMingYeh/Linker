@@ -7,7 +7,9 @@ const Box = () => {
   const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
-    setAnimate(true);
+    setTimeout(() => {
+      setAnimate(true);
+  },800)
   }, []);
 
   return (

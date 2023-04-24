@@ -11,7 +11,12 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
-
+      colors: {
+        primary: "#ca3b07",
+        secondary: "#FFB502",
+        tertiary: "#fffeff",
+        background: "#08214E"
+      }
     },
   },
   

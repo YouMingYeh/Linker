@@ -129,7 +129,7 @@ function Sidebar({ children }) {
 }
 
 function Content({ children }) {
-  return <div className="background w-screen h-screen pt-16">{children}</div>;
+  return <div className="background w-screen h-full pt-16 pb-20 ">{children}</div>;
 }
 
 function LoadingIndicator() {

@@ -5,10 +5,13 @@
 
 
 @layer base {
-  html {
+  body {
     font-family: 'ArcadeClassic', sans-serif;
+    @apply background
   }
 }
+
+
 
 @layer components {
     .text {

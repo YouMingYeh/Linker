@@ -10,6 +10,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@magne4000/vite-plugin-vercel-ssr": "^0.1.5",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.12.1",
     "@react-three/drei": "^9.65.5",
@@ -27,7 +28,8 @@
     "sirv": "^2.0.2",
     "three": "^0.151.3",
     "vite": "^4.0.3",
-    "vite-plugin-ssr": "^0.4.115"
+    "vite-plugin-ssr": "^0.4.115",
+    "vite-plugin-vercel": "^0.1.7"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",

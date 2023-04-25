@@ -3,7 +3,7 @@ import './style.css'
 import logo from './work.jpeg'
 import { AiFillGithub, AiFillYoutube } from "react-icons/ai/index.js";
 import { BsDiscord, BsMedium } from "react-icons/bs/index.js";
-import { SiOpenai } from "react-icons/si/index.js"
+import { SiOpenai, SiOverleaf } from "react-icons/si/index.js"
 const buttons = [
   {
     name: 'GitHub',
@@ -27,6 +27,10 @@ const buttons = [
     name: 'Medium',
     url: 'https://medium.com/',
     icon: <BsMedium />
+  },{
+    name: 'Overleaf',
+    url: 'https://overleaf.com/',
+    icon: <SiOverleaf />
   }
 ]
 

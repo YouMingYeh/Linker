@@ -1,31 +1,9 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-@import url('https://fonts.cdnfonts.com/css/arcade-classic');
-
 
 @layer base {
-  body {
-    font-family: 'ArcadeClassic', sans-serif;
-    @apply background
+  body, html {
+    @apply font-mono
   }
-}
-
-
-
-@layer components {
-    .text {
-        @apply text-slate-800 dark:text-tertiary font-semibold text-lg
-    }
-    .background {
-        @apply bg-slate-100 dark:bg-background 
-    }
-    .button {
-        @apply text bg-slate-400 dark:bg-primary border-2 border-slate-800 shadow-slate-800 transition-all rounded-lg px-5 py-2 m-2 shadow-[3px_3px_0_0px] 
-        dark:border-secondary
-        dark:shadow-secondary
-    }
-    .button:hover {
-        @apply shadow-[2px_2px_0_0] translate-x-1 translate-y-1 shadow-slate-800 
-    }
 }

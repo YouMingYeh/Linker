@@ -6,7 +6,7 @@ import ReactDOMServer from 'react-dom/server'
 import React from 'react'
 import { PageShell } from './PageShell'
 import { escapeInject, dangerouslySkipEscape } from 'vite-plugin-ssr/server'
-import logoUrl from '/icon.png'
+import logoUrl from '/hi.png'
 
 async function render(pageContext) {
   const { Page, pageProps } = pageContext
@@ -20,8 +20,8 @@ async function render(pageContext) {
 
   // See https://vite-plugin-ssr.com/head
   const { documentProps } = pageContext.exports
-  const title = (documentProps && documentProps.title) || 'Linker'
-  const desc = (documentProps && documentProps.description) || 'App using Vite + vite-plugin-ssr'
+  const title = (documentProps && documentProps.title) || 'You Ming - Yeh'
+  const desc = (documentProps && documentProps.description) || "You Ming - Yeh's Portfolio"
 
   const documentHtml = escapeInject`<!DOCTYPE html>
     <html lang="en">

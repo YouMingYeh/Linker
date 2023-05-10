@@ -2,22 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-
-    .text {
-        @apply text-slate-800 dark:text-tertiary font-semibold text-2xl
-    }
-    .container {
-        @apply text-center items-center flex-col flex pr-20 pl-20
-    }
-    .link {
-        @apply text bg-slate-400 dark:bg-primary border-2 border-slate-800 shadow-slate-800 transition-all rounded-lg px-5 py-2 m-2 shadow-[3px_3px_0_0px] 
-        dark:border-secondary
-        dark:shadow-secondary
-
-    }
-
-    .link:hover {
-        @apply shadow-[2px_2px_0_0] translate-x-1 translate-y-1 shadow-slate-800 
-    }
+@layer base {
+  body, html {
+    @apply font-mono ordinal slashed-zero tabular-nums antialiased hover:subpixel-antialiased
+  }
 }
+
+
+
+@layer components {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+} 
+
+.scrollbar-hide {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+}
+  .scroll-container {
+    @apply h-screen  snap-y snap-mandatory overflow-scroll scrollbar-hide scroll-smooth 
+  }
+  .section {
+    @apply h-screen snap-start w-screen my-96
+  }
+    
+}
+
+

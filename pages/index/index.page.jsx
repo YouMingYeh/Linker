@@ -1,74 +1,60 @@
-import React from 'react'
-import './style.css'
-import logo from './ntu.png'
+import React, { useEffect, useRef, useState } from "react";
+import "./style.css";
+import { gsap } from "gsap";
+import { ScrollTrigger, ScrollToPlugin, TextPlugin } from "gsap/dist/all";
+import Breadcrumbs from "./BreadCrumbs";
+import Section1 from "./sections/About";
+import Projects from "./sections/Projects";
+import Info from "./sections/Info";
+import Contact from "./sections/Contact"
+import Avatar from "./Avatar";
 
-const buttons = [
-  {
-    name: 'NTU COOL',
-    url: 'https://cool.ntu.edu.tw/'
-  },
-  {
-    name: 'NTU Webmail',
-    url: 'https://ntumail.cc.ntu.edu.tw/'
-  },
-  {
-    name: 'my NTU',
-    url: 'https://my.ntu.edu.tw/'
-  },
-  {
-    name: 'NTU Course',
-    url: 'https://nol2.aca.ntu.edu.tw/nol/guest/index.php'
-  },{
-    name: 'NTU epo',
-    url: 'https://if163.aca.ntu.edu.tw/eportfolio/student/OpinionMid.asp'
-  }
-]
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, TextPlugin);
 
-
-export { Page }
-
+export { Page };
 function Page() {
-  return (
-    <div className='container'>
-      <Logo />
-      {
-        buttons.map((b,i)=>{
-          return (
-            <Button key={b.name+i} name={b.name} url={b.url}/>
-          )
-        })
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const sectionRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
+
+  useEffect(() => {
+    const container = document.getElementsByClassName("scroll-container")[0];
+    container.addEventListener("scroll", (event) => {
+      // const position = container.scrollTop
+
+      for (let i = sectionRefs.length - 1; i >= 0; i--) {
+        if (!sectionRefs[i]) return;
+        const rect = sectionRefs[i].current.getBoundingClientRect();
+        if (!rect) return;
+
+        if (rect.x == 0 && rect.y == 0) {
+          // console.log(i)
+          setCurrentIndex(i);
+          return;
+        }
       }
-      
-    </div>
-  )
-}
+    });
+  }, []);
 
-function Logo() {
   return (
-    <div
-      style={{
-        marginTop: 20,
-        marginBottom: 10,
-      }}
-    >
-      <a href="/">
-        <img
-          src={logo}
-          className="h-52 w-52 
-        outline-4 outline-dotted outline-slate-800 dark:outline-slate-100 rounded-full outline-offset-4 mb-16 object-cover"
-          alt="logo"
-        />
-      </a>
+    <div className="scroll-container">
+      <Avatar />
+      <Breadcrumbs
+        currentIndex={currentIndex}
+        sectionRefs={sectionRefs}
+      ></Breadcrumbs>
+      <section sectionRefs={sectionRefs[1]}>
+        <Section1 sectionRefs={sectionRefs}></Section1>
+      </section>
+      <section className="section" ref={sectionRefs[1]}>
+        <Projects currentIndex={currentIndex} />
+      </section>
+      <section className="section" ref={sectionRefs[2]}>
+        <Info />
+        {/* <Slide /> */}
+      </section>
+      <section className="section" ref={sectionRefs[3]}>
+        <Contact />
+      </section>
     </div>
-  );
-}
-
-function Button({name, url}) {
-  return (
-      <button onClick={()=>{
-        window.open(url);
-      }} className='link w-full'>
-        {name}
-      </button>
   );
 }
